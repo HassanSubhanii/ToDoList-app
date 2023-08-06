@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 const PORT=process.env.PORT||3000;
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -18,9 +19,11 @@ app.use(express.static("public"));
 
 
 
-mongoose.connect(process.env.mongourl, {
-  useNewUrlParser: true
-});
+ mongoose.connect(process.env.MONGO_URI,{
+   useNewUrlParser:true,
+   useUnifiedTopology:true
+ } );
+
 const workItems = [];
 const itemsSchema = new mongoose.Schema({
   name: String
