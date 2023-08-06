@@ -19,7 +19,7 @@ app.use(express.static("public"));
 
 
 
- mongoose.connect("mongodb+srv://admin_hassan:Test123..@cluster0.xtymweo.mongodb.net/todolistDB",{
+ mongoose.connect("mongodb+srv://@cluster0.xtymweo.mongodb.net/todolistDB",{
    useNewUrlParser:true,
    useUnifiedTopology:true
  });
