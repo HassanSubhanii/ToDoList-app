@@ -1,12 +1,13 @@
 //jshint esversion:6
-
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const _=require("lodash");
+
 const mongoose = require("mongoose");
 
 const app = express();
-
+const PORT=process.env.PORT||3000;
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -17,7 +18,7 @@ app.use(express.static("public"));
 
 
 
-mongoose.connect("mongodb+srv://admin_hassan:Test123..@cluster0.xtymweo.mongodb.net/todolistDB", {
+mongoose.connect(process.env.mongourl, {
   useNewUrlParser: true
 });
 const workItems = [];
@@ -155,6 +156,6 @@ app.post("/delete", function(req, res) {
 
 
 
-app.listen(process.env.PORT||3000, function() {
-  console.log("Server started on port 3000");
+app.listen(PORT, function() {
+  console.log("Server has started");
 });
