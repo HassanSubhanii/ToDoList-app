@@ -19,10 +19,10 @@ app.use(express.static("public"));
 
 
 
- mongoose.connect(process.env.MONGO_URI,{
+ mongoose.connect("mongodb+srv://admin_hassan:Test123..@cluster0.xtymweo.mongodb.net/todolistDB",{
    useNewUrlParser:true,
    useUnifiedTopology:true
- })
+ });
 
 const workItems = [];
 const itemsSchema = new mongoose.Schema({
