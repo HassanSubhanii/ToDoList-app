@@ -1,4 +1,7 @@
 {
+  "scripts": {
+         "start": "..."
+     },
   "name": "todolist-v1",
   "version": "1.0.0",
   "description": "",
